@@ -1,5 +1,5 @@
 - if user_signed_in?
-  = link_to 'logout', destroy_user_session_path, method: :delete, class: "btn btn-dark"
+  = link_to t('.logout'), destroy_user_session_path, method: :delete, class: "btn btn-dark"
 .flash
   - flash.each do |key, value|
     - key = "info" if key == "notice"
