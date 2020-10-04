@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
-  # get '/home', to: 'home#index'
+  get '/home', to: 'home#index'
 
   namespace :api, {format: 'json'} do
     namespace :v1 do
@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     end
   end
 
-  # root 'home#index'
+  root 'home#index'
 end
