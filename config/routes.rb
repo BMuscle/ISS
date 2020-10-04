@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
-  resources :users, only: [:show], param: :nickname
+  # get '/home', to: 'home#index'
 
-  root 'users#show'
+  namespace :api, {format: 'json'} do
+    namespace :v1 do
+      resources :users, only: [:index, :show]
+    end
+  end
+
+  # root 'home#index'
 end
