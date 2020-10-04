@@ -1,22 +1,15 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
+    <router-link :to="{name: 'home'}">HomeLink</router-link>
+    <router-link :to="{name: 'user', params: current_user}">UserLink</router-link>
+    <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  data: function () {
-    return {
-      message: "Hello Vue!"
-    }
-  }
 }
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
 </style>
