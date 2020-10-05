@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <router-link :to="{name: 'home'}">HomeLink</router-link>
-    <router-link :to="{name: 'user', params: current_user}">UserLink</router-link>
-    <router-view/>
+    <Header></Header>
+    <router-view />
   </div>
 </template>
 
 <script>
+import Header from "./packs/components/header";
 export default {
-}
+  components: { Header },
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

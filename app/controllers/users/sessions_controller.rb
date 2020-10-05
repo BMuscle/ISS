@@ -22,7 +22,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # ログイン後のページ指定
   def after_sign_in_path_for(_resource)
-    user_path(current_user.nickname)
+    home_path
   end
 
   # ログアウト後のページ指定

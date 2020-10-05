@@ -7,8 +7,11 @@
     = csp_meta_tag
     = javascript_pack_tag 'application'
   %body
-    .header
-      = render 'header/header'
+    - unless current_user
+      .flash
+        - flash.each do |key, value|
+          - key = "info" if key == "notice"
+          - key = "danger"  if key == "alert"
+          = content_tag :div, value, class: "alert alert-#{key}"
     .main
       = yield
-    .footer

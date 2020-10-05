@@ -1,23 +1,22 @@
-import Vue from 'vue'
-import Router from './router/router'
-import App from '../app'
-import axios from 'axios';
-import request from './utils/requests'
+import Vue from "vue";
+import Router from "./router/router";
+import App from "../app";
+import request from "./utils/requests";
 
 Vue.mixin({
-  data: function () {
+  data: function() {
     return {
-      current_user: {}
-    }
+      current_user: {},
+    };
   },
-  created: function () {
-    request.get('/api/v1/users/current_user', {}).then(response => (this.current_user = response.data))
-  }
-})
-window.addEventListener('DOMContentLoaded', () => {
+  created: function() {
+    request.get("/api/v1/users/current_user", {}).then((response) => (this.current_user = response.data));
+  },
+});
+window.addEventListener("DOMContentLoaded", () => {
   new Vue({
     router: Router,
-    el: '#app',
-    render: h => h(App)
-  })
-})
+    el: "#app",
+    render: (h) => h(App),
+  });
+});

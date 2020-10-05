@@ -1,7 +1,0 @@
-- if user_signed_in?
-  = link_to t('.logout'), destroy_user_session_path, method: :delete, class: "btn btn-dark"
-.flash
-  - flash.each do |key, value|
-    - key = "info" if key == "notice"
-    - key = "danger"  if key == "alert"
-    = content_tag :div, value, class: "alert alert-#{key}"

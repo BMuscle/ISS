@@ -1,14 +1,14 @@
 <template>
   <div id="user">
     User
-    {{current_user}}
+    {{ current_user }}
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'User',
-  }
+export default {
+  name: "User",
+};
 </script>
 
 <style scoped></style>
