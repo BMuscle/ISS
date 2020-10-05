@@ -10,7 +10,7 @@ Vue.mixin({
     };
   },
   created: function() {
-    request.get("/api/v1/users/current_user", {}).then((response) => (this.current_user = response.data));
+    request.get("/api/v1/users/current_user").then((response) => (this.current_user = response.data));
   },
 });
 window.addEventListener("DOMContentLoaded", () => {
