@@ -6,6 +6,9 @@
           <router-link :to="{ name: 'home' }" class="nav-link">Home</router-link>
         </li>
         <li class="nav-item">
+          <router-link :to="{ name: 'categories' }" class="nav-link">カテゴリー</router-link>
+        </li>
+        <li class="nav-item">
           <router-link :to="{ name: 'user', params: current_user }" class="nav-link">マイページ</router-link>
         </li>
         <li class="nav-item">
