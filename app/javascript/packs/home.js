@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "./router/router";
 import App from "../app";
 import request from "./utils/requests";
+import i18n from "./i18n/i18n";
 
 Vue.mixin({
   data: function() {
@@ -17,6 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
   new Vue({
     router: Router,
     el: "#app",
+    i18n,
     render: (h) => h(App),
   });
 });

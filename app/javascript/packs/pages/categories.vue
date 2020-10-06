@@ -1,7 +1,7 @@
 <template>
   <div id="categories">
-    <h1>Categories</h1>
-    {{categories}}
+    <h1>{{ $t("categories.title") }}</h1>
+    {{ categories }}
   </div>
 </template>
 

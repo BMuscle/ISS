@@ -9,8 +9,10 @@
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
+    "js-yaml": "^3.14.0",
     "popper.js": "^1.16.1",
     "vue": "^2.6.12",
+    "vue-i18n": "^8.21.1",
     "vue-loader": "^15.9.3",
     "vue-router": "^3.4.5",
     "vue-template-compiler": "^2.6.12"
