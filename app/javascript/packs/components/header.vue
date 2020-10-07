@@ -5,9 +5,11 @@
         <li class="nav-item">
           <router-link :to="{ name: 'home' }" class="nav-link">{{ $t("header.nav.home") }}</router-link>
         </li>
-        <li class="nav-item">
-          <router-link :to="{ name: 'categories' }" class="nav-link">{{ $t("header.nav.categories") }}</router-link>
-        </li>
+        <div class="admin-nav" v-if="current_user.admin">
+          <li class="nav-item">
+            <router-link :to="{ name: 'admin' }" class="nav-link">{{ $t("header.nav.admin") }}</router-link>
+          </li>
+        </div>
         <li class="nav-item">
           <router-link :to="{ name: 'user', params: current_user }" class="nav-link">{{ $t("header.nav.user") }}</router-link>
         </li>

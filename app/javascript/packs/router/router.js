@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 import Home from "../pages/home";
 import User from "../pages/user";
 import Categories from "../pages/categories";
+import Admin from "../pages/admin";
 
 Vue.use(VueRouter);
 
@@ -12,6 +13,7 @@ export default new VueRouter({
   routes: [
     { path: "/", name: "home", component: Home },
     { path: "/users/:nickname", name: "user", component: User },
-    { path: "/categories", name: "categories", component: Categories },
+    { path: "/admin", name: "admin", component: Admin },
+    { path: "/admin/categories", name: "categories", component: Categories },
   ],
 });

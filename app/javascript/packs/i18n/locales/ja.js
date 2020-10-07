@@ -2,8 +2,8 @@ export default {
   header: {
     nav: {
       home: "ホーム",
-      categories: "カテゴリー",
       user: "マイページ",
+      admin: "管理者ページ",
       logout: "ログアウト",
     },
   },
@@ -12,6 +12,10 @@ export default {
   },
   user: {
     title: "マイページ",
+  },
+  admin: {
+    title: "管理者ページ",
+    categories: "カテゴリー一覧",
   },
   categories: {
     title: "カテゴリー一覧",
