@@ -1,7 +1,7 @@
 <template>
   <div id="user">
     <h1>{{ $t("user.title") }}</h1>
-    {{ current_user }}
+    {{ $store.getters.current_user }}
   </div>
 </template>
 

@@ -1,21 +1,18 @@
 import Vue from "vue";
 import Router from "./router/router";
 import App from "../app";
-import request from "./utils/requests";
 import i18n from "./i18n/i18n";
+import store from "./store/store";
 
 Vue.mixin({
-  data: function() {
-    return {
-      current_user: {},
-    };
-  },
   created: function() {
-    request.get("/api/v1/users/current_user").then((response) => (this.current_user = response.data));
+    $store.dispatch("setCurrentUser");
   },
 });
+
 window.addEventListener("DOMContentLoaded", () => {
   new Vue({
+    store,
     router: Router,
     el: "#app",
     i18n,
