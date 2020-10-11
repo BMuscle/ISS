@@ -5,8 +5,8 @@ import i18n from "./i18n/i18n";
 import store from "./store/store";
 
 Vue.mixin({
-  created: function() {
-    $store.dispatch("setCurrentUser");
+  created: function () {
+    this.$store.dispatch("setCurrentUser");
   },
 });
 
