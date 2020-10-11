@@ -8,14 +8,14 @@ RSpec.describe "Api::V1::Users", type: :request do
       sign_in login_user
     end
 
-    describe '/api/v1/users/current_user' do
+    describe 'GET /api/v1/users/current_user' do
       it 'JSONデータが返る' do
         get api_v1_users_current_user_path
         expect(response_json).to eq({ id: login_user.id, nickname: login_user.nickname })
       end
     end
 
-    describe '/api/v1/users' do
+    describe 'GET /api/v1/users' do
       let(:user_list) { (create_list(:user, 2) << login_user).map { |user| { id: user.id, nickname: user.nickname } } }
 
       before do

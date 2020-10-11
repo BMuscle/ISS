@@ -4,12 +4,9 @@ module Api
       before_action :get_categories, only: :index
 
       def create
-        p "-------------"
-        p category_params
-        p "-------------"
         @category = Category.new(category_params)
         if @category.save
-          head :no_content
+          head :created
         else
           render json: @category.errors.full_messages, status: :unprocessable_entity
         end
