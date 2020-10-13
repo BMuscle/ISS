@@ -24,18 +24,33 @@ RSpec.describe "Api::V1::Categories", type: :request do
     describe 'POST api/v1/categories' do
       context "Valid" do
         let(:category) { build(:category) }
+
         it "作成に成功すること" do
           post api_v1_categories_path, params: { category: { name: category.name } }
-          expect(response).to have_http_status(201)
+          expect(response).to have_http_status(:created)
         end
       end
 
       context "Not Valid" do
         let(:category) { build(:category, name: '') }
+
         it "エラーメッセージが返る" do
           post api_v1_categories_path, params: { category: { name: category.name } }
           expect(response_json).to eq(["カテゴリー名を入力してください"])
         end
+      end
+    end
+
+    describe 'GET api/v1/categories/:id' do
+      let(:category) { create(:category) }
+
+      before do
+        category
+      end
+
+      it 'JSONデータが返る' do
+        get api_v1_category_path(category.id)
+        expect(response_json).to eq({ id: category.id, name: category.name })
       end
     end
   end

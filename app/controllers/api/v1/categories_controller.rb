@@ -2,6 +2,7 @@ module Api
   module V1
     class CategoriesController < ApplicationController
       before_action :get_categories, only: :index
+      before_action :get_category, only: :show
 
       def create
         @category = Category.new(category_params)
@@ -20,6 +21,10 @@ module Api
 
       def get_categories
         @categories = Category.all
+      end
+
+      def get_category
+        @category = Category.find(params[:id])
       end
     end
   end
