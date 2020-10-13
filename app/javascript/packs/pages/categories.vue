@@ -1,8 +1,25 @@
 <template>
   <div id="categories">
     <h1>{{ $t("categories.title") }}</h1>
-    <router-link to="/admin/categories/new" class="nav-link">{{ $t("helpers.submit.create") }}</router-link>
-    {{ categories }}
+    <div class="category-create">
+      <router-link to="/admin/categories/new" class="btn btn-success">{{ $t("helpers.submit.create") }}</router-link>
+    </div>
+    <table class="table table-nowrap">
+      <thead class="thead-light">
+        <tr>
+          <th>{{ $t("models.category.name") }}</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="category in categories" v-bind:key="category.id">
+          <td>{{ category.name }}</td>
+          <td>
+            編集・削除ボタン予定
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -15,7 +32,7 @@ export default {
       categories: [],
     };
   },
-  mounted: function() {
+  created: function() {
     request.get("/api/v1/categories").then((response) => {
       this.categories = response.data;
     });
@@ -23,4 +40,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.category-create{
+  padding: 5px;
+}
+</style>

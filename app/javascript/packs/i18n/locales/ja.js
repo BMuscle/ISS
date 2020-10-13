@@ -30,6 +30,10 @@ export default {
   },
   new_categories: {
     title: "カテゴリー登録",
-    name: "カテゴリ名",
+  },
+  models: {
+    category: {
+      name: "カテゴリ名",
+    },
   },
 };

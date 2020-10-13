@@ -1,5 +1,5 @@
 <template>
-  <div id="categories">
+  <div id="new_categories">
     <div v-if="errors.length">
       <ul class="alert alert-warning">
         <li v-for="error in errors" :key="error">
@@ -11,7 +11,7 @@
     <div class="category_form">
       <form>
         <div class="form-group">
-          <label for="category_name">{{ $t("new_categories.name") }}</label>
+          <label for="category_name">{{ $t("models.category.name") }}</label>
           <input type="text" id="category_name" class="form-control" v-model="category.name" required="required" />
         </div>
         <div class="form-group">

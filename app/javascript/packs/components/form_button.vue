@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     click: function() {
-      $emit("form-click");
+      this.$emit("form-click");
     },
     labelName: function() {
       if (this.label) {
