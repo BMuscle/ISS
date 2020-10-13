@@ -1,4 +1,9 @@
 export default {
+  helpers: {
+    submit: {
+      create: "登録",
+    },
+  },
   header: {
     nav: {
       home: "ホーム",

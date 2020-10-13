@@ -1,6 +1,7 @@
 <template>
   <div id="categories">
     <h1>{{ $t("categories.title") }}</h1>
+    <router-link to="/admin/categories/new" class="nav-link">{{ $t("helpers.submit.create") }}</router-link>
     {{ categories }}
   </div>
 </template>
@@ -15,7 +16,9 @@ export default {
     };
   },
   mounted: function() {
-    request.get("/api/v1/categories").then((response) => (this.categories = response.data));
+    request.get("/api/v1/categories").then((response) => {
+      this.categories = response.data;
+    });
   },
 };
 </script>
