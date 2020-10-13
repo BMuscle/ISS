@@ -1,7 +1,10 @@
 export default {
   helpers: {
     submit: {
+      send: "送信",
       create: "登録",
+      update: "更新",
+      destroy: "削除",
     },
   },
   header: {
@@ -24,5 +27,9 @@ export default {
   },
   categories: {
     title: "カテゴリー一覧",
+  },
+  new_categories: {
+    title: "カテゴリー登録",
+    name: "カテゴリ名",
   },
 };
