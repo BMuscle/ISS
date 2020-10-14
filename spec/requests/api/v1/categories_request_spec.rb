@@ -53,5 +53,27 @@ RSpec.describe "Api::V1::Categories", type: :request do
         expect(response_json).to eq({ id: category.id, name: category.name })
       end
     end
+
+    describe 'PUT api/v1/categories/:id' do
+      let(:category) { create(:category) }
+
+      before do
+        category
+      end
+
+      context "Valid" do
+        it "作成に成功すること" do
+          put api_v1_category_path(category.id), params: { category: { name: "#{category.name}:edit" } }
+          expect(response).to have_http_status(:no_content)
+        end
+      end
+
+      context "Not Valid" do
+        it "エラーメッセージが返る" do
+          put api_v1_category_path(category.id), params: { category: { name: "" } }
+          expect(response_json).to eq(["カテゴリー名を入力してください"])
+        end
+      end
+    end
   end
 end
