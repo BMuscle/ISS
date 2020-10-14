@@ -11,7 +11,7 @@ RSpec.describe "Api::V1::Users", type: :request do
     describe 'GET /api/v1/users/current_user' do
       it 'JSONデータが返る' do
         get api_v1_users_current_user_path
-        expect(response_json).to eq({ id: login_user.id, nickname: login_user.nickname })
+        expect(response_json).to eq({ id: login_user.id, nickname: login_user.nickname, admin: login_user.admin })
       end
     end
 
