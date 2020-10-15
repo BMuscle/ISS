@@ -1,4 +1,8 @@
 export default {
+  link: {
+    new: "登録",
+    edit: "編集",
+  },
   helpers: {
     submit: {
       send: "送信",
