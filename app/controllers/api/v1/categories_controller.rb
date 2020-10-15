@@ -7,7 +7,7 @@ module Api
       def create
         @category = Category.new(category_params)
         if @category.save
-          head :created
+          render :show, status: :created
         else
           render json: @category.errors.full_messages, status: :unprocessable_entity
         end
