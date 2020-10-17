@@ -2,7 +2,7 @@ module Api
   module V1
     class CategoriesController < ApplicationController
       before_action :get_categories, only: :index
-      before_action :get_category, only: [:show, :update]
+      before_action :get_category, only: [:show, :update, :destroy]
 
       def create
         @category = Category.new(category_params)
@@ -18,6 +18,14 @@ module Api
           head :no_content
         else
           render json: @category.errors.full_messages, status: :unprocessable_entity
+        end
+      end
+
+      def destroy
+        if @category.destroy
+          head :no_content
+        else
+          head :unprocessable_entity
         end
       end
 

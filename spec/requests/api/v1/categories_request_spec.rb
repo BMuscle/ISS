@@ -75,5 +75,18 @@ RSpec.describe "Api::V1::Categories", type: :request do
         end
       end
     end
+
+    describe 'DELETE api/v1/categories/:id' do
+      let(:category) { create(:category) }
+
+      before do
+        category
+      end
+
+      it "204が返る" do
+        delete api_v1_category_path(category.id)
+        expect(response).to have_http_status(:no_content)
+      end
+    end
   end
 end
