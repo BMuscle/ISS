@@ -16,6 +16,7 @@
           <td>{{ category.name }}</td>
           <td>
             <router-link class="btn btn-outline-dark" :to="{ path: `/admin/categories/${category.id}/edit` }">{{ $t("link.edit") }}</router-link>
+            <div class="btn btn-danger" v-on:click="destroyCategory(category.id)">{{ $t("link.destroy") }}</div>
           </td>
         </tr>
       </tbody>
@@ -33,9 +34,23 @@ export default {
     };
   },
   created: function() {
-    request.get("/api/v1/categories").then((response) => {
-      this.categories = response.data;
-    });
+    this.setCategories();
+  },
+  methods: {
+    setCategories: function() {
+      request.get("/api/v1/categories").then((response) => {
+        this.categories = response.data;
+      });
+    },
+    destroyCategory: function(id) {
+      request.delete(`/api/v1/categories/${id}`).then((response) => {
+        this.$store.commit("flash_message/setContent", { content: "カテゴリーの削除に成功しました" });
+        this.setCategories();
+      },
+      (error) => {
+        this.$store.commit("flash_message/setContent", { content: "カテゴリーの削除に失敗しました", optionClass: "danger" });
+      });
+    },
   },
 };
 </script>

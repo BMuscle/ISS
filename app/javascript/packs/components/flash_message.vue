@@ -32,9 +32,13 @@ export default {
 .notice {
   background-color: #dcffff;
 }
+.danger {
+  background-color: #fa8072;
+  color: #ffffff;
+}
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 1000ms;
+  transition: opacity 500ms;
 }
 
 .v-enter {

@@ -2,13 +2,13 @@ export default {
   link: {
     new: "登録",
     edit: "編集",
+    destroy: "削除",
   },
   helpers: {
     submit: {
       send: "送信",
       create: "登録",
       update: "更新",
-      destroy: "削除",
     },
   },
   header: {
