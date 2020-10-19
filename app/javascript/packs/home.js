@@ -1,22 +1,24 @@
 import Vue from "vue";
-import Router from "./router/router";
+import router from "./router/router";
 import App from "../app";
-import request from "./utils/requests";
+import i18n from "./i18n/i18n";
+import store from "./store/store";
+import { sync } from "vuex-router-sync";
 
 Vue.mixin({
-  data: function() {
-    return {
-      current_user: {},
-    };
-  },
   created: function() {
-    request.get("/api/v1/users/current_user", {}).then((response) => (this.current_user = response.data));
+    store.dispatch("setCurrentUser");
   },
 });
+
+sync(store, router);
+
 window.addEventListener("DOMContentLoaded", () => {
   new Vue({
-    router: Router,
+    store,
+    router: router,
     el: "#app",
+    i18n,
     render: (h) => h(App),
   });
 });

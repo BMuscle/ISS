@@ -1,15 +1,13 @@
 <template>
-  <p>
-    Home
-  </p>
+  <div id="home">
+    <h1>{{ $t("home.title") }}</h1>
+  </div>
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "Home",
 };
-console.log(sessionStorage);
 </script>
 
 <style scoped></style>

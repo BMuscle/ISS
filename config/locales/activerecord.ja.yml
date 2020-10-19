@@ -1,4 +1,7 @@
 ja:
     activerecord:
-        attrributes:
-            models:
+        attributes:
+            category:
+                name: カテゴリー名
+        models:
+            category: カテゴリー
