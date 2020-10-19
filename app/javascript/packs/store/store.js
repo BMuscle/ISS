@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import request from "../utils/requests";
+import flash_message from './flash.message'
 
 Vue.use(Vuex);
 
@@ -26,4 +27,7 @@ export default new Vuex.Store({
       return state.current_user;
     },
   },
+  modules: {
+    flash_message
+  }
 });

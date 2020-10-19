@@ -4,7 +4,7 @@
       <router-link to="/admin/categories" class="nav-link">{{ $t("admin.categories") }}</router-link>
     </nav>
     <h1>{{ $t("admin.title") }}</h1>
-    <router-view />
+    <router-view class="admin-view"/>
   </div>
 </template>
 
@@ -16,4 +16,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.admin-view {
+  padding: 20px 80px;
+}
+</style>

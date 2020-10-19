@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index]
       get '/users/current_user', to: 'users#current_user'
-      resources :categories, only: [:index, :create]
+      resources :categories, only: [:index]
+
+      namespace :admin do
+        resources :categories, only: [:show, :create, :update, :destroy]
+      end
     end
   end
 
