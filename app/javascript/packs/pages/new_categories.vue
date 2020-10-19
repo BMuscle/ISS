@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     createCategory: function() {
-      request.post("/api/v1/categories", { params: { category: this.category } }).then(
+      request.post("/api/v1/admin/categories", { params: { category: this.category } }).then(
         (response) => {
           this.$store.commit("flash_message/setContent", { content: "カテゴリーの登録に成功しました" });
           this.$router.push({ path: "/admin/categories" });

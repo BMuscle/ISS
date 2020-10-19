@@ -43,7 +43,7 @@ export default {
       });
     },
     destroyCategory: function(id) {
-      request.delete(`/api/v1/categories/${id}`).then((response) => {
+      request.delete(`/api/v1/admin/categories/${id}`).then((response) => {
         this.$store.commit("flash_message/setContent", { content: "カテゴリーの削除に成功しました" });
         this.setCategories();
       },

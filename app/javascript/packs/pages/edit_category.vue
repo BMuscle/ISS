@@ -36,13 +36,13 @@ export default {
     };
   },
   created: function() {
-    request.get(`/api/v1/categories/${this.$route.params["id"]}`).then((response) => {
+    request.get(`/api/v1/admin/categories/${this.$route.params["id"]}`).then((response) => {
       this.category = response.data;
     });
   },
   methods: {
     editCategory: function() {
-      request.patch(`/api/v1/categories/${this.category.id}`, { params: { category: this.category } }).then(
+      request.patch(`/api/v1/admin/categories/${this.category.id}`, { params: { category: this.category } }).then(
         (response) => {
           this.$store.commit("flash_message/setContent", { content: "カテゴリーの登録に成功しました" });
           this.$router.push({ path: "/admin/categories" });
